@@ -1,0 +1,11 @@
+<h1>Storytime!</h1>
+
+<ul>
+  <% @stories.each do |story| %>
+    <li><%= story.title %>
+      <ul>
+        <li><img src="<%= story.image %>"></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
