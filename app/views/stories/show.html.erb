@@ -2,4 +2,12 @@
 
 <img src="<%= @story.image %>" alt="<%= @story.title %>" />
 
+
+  <p>
+  <% @story.contents.each do |content| %>
+    <span><%= content.line %>.  </span>
+  <% end %>
+  </p>
+
+
 <p><%= link_to "Delete", story_path(@story), :data => {confirm: "Is you sure?", method: "delete"} %></p>
