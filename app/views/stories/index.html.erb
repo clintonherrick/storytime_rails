@@ -2,7 +2,7 @@
 
 <ul>
   <% @stories.each do |story| %>
-    <li><%= story.title %> | <%= link_to "edit", edit_story_path(story) %> 
+    <li><%= link_to story.title, story_path(story) %> | <%= link_to "edit", edit_story_path(story) %> 
       <ul>
         <li><img src="<%= story.image %>">
         </li>
