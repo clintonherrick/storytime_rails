@@ -1,3 +1,5 @@
 <h1><%= @story.title %></h1>
 
 <img src="<%= @story.image %>" alt="<%= @story.title %>" />
+
+<p><%= link_to "Delete", story_path(@story), :data => {confirm: "Is you sure?", method: "delete"} %></p>
