@@ -14,13 +14,20 @@ class ContentsController < ApplicationController
     end
   end
 
-  # def edit
-  #
-  # end
-  #
-  # def update
-  #
-  # end
+  def edit
+    @story = Story.find(params[:story_id])
+    @content = @story.contents.find(params[:id])
+  end
+
+  def update
+    @story = Story.find(params[:story_id])
+    @content = @story.contents.find(params[:id])
+    if @content.update(content_params)
+      redirect_to story_path(@story)
+    else
+      render :edit
+    end
+  end
   #
   # def destroy
   #

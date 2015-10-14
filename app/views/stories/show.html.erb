@@ -5,9 +5,10 @@
 
   <p>
   <% @story.contents.each do |content| %>
-    <span><%= content.line %>.  </span>
+    <span ><%= link_to content.line, edit_story_content_path(@story, content), :class => "line_link" %>.  </span>
   <% end %>
   </p>
 
 
 <p><%= link_to "Delete", story_path(@story), :data => {confirm: "Is you sure?", method: "delete"} %></p>
+<p><%= link_to "Home", root_path %></p>
