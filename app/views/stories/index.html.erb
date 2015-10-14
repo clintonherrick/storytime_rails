@@ -1,14 +1,13 @@
 <h1>Storytime!</h1>
-
-<ul>
+<div class="row">
   <% @stories.each do |story| %>
-    <li><%= link_to story.title, story_path(story) %> | <%= link_to "edit", edit_story_path(story) %> 
-      <ul>
-        <li><img src="<%= story.image %>">
-        </li>
-      </ul>
-    </li>
+    <div class="col-md-4">
+      <div class="content">
+        <img src="<%= story.image %>">
+        <p><%= link_to story.title, story_path(story) %> | <%= link_to "edit", edit_story_path(story) %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
 
 <%= link_to "Add a Story", new_story_path %>

@@ -1,3 +1,5 @@
 <h1>Edit Content</h1>
 
 <%= render "form" %>
+
+<%= link_to 'Delete Line', story_content_path(@story, @content), :data => {:confirm => "Is you sure?", :method => "delete"}%> 

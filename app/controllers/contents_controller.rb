@@ -28,10 +28,13 @@ class ContentsController < ApplicationController
       render :edit
     end
   end
-  #
-  # def destroy
-  #
-  # end
+
+  def destroy
+    @story = Story.find(params[:story_id])
+    @content = @story.contents.find(params[:id])
+    @content.destroy
+    redirect_to story_path(@story)
+  end
 
   private
 
