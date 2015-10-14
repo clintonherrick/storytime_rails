@@ -2,9 +2,10 @@
 
 <ul>
   <% @stories.each do |story| %>
-    <li><%= story.title %>
+    <li><%= story.title %> | <%= link_to "edit", edit_story_path(story) %> 
       <ul>
-        <li><img src="<%= story.image %>"></li>
+        <li><img src="<%= story.image %>">
+        </li>
       </ul>
     </li>
   <% end %>
