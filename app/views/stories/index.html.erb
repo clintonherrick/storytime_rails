@@ -1,13 +1,20 @@
-<h1>Storytime!</h1>
-<div class="row">
-  <% @stories.each do |story| %>
-    <div class="col-md-4">
-      <div class="content">
-        <img src="<%= story.image %>">
-        <p><%= link_to story.title, story_path(story) %> | <%= link_to "edit", edit_story_path(story) %></p>
-      </div>
-    </div>
-  <% end %>
+<div class="jumbotron">
+  <h1>Storytime!</h1>
 </div>
+<!-- <div class="row"> -->
+  <ul class="list-group">
+    <% @stories.each do |story| %>
+      <li class="list-group-item"><%= link_to story.title, story_path(story) %> | <%= link_to "edit", edit_story_path(story) %></li>
+    <% end %>
+  </ul>
+  <!-- <% @stories.each do |story| %> -->
+    <!-- <div class="col-md-4"> -->
+      <!-- <div class="content"> -->
+        <!-- <img src="<%= story.image %>"> -->
+        <!-- <p><%= link_to story.title, story_path(story) %> | <%= link_to "edit", edit_story_path(story) %></p> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- <% end %> -->
+<!-- </div> -->
 
 <%= link_to "Add a Story", new_story_path %>
