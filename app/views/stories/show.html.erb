@@ -2,13 +2,18 @@
 
 <img src="<%= @story.image %>" alt="<%= @story.title %>" />
 
+<a title="Popover Title Here" id="popover" href="#" rel="popover" data-content="Here's the content of the popover!" data-trigger="hover">test with html</a>
 
   <p>
   <% @story.contents.each do |content| %>
-    <span ><%= link_to content.line, edit_story_content_path(@story, content), :class => "line_link" %>.  </span>
+    <span><%= link_to content.line, edit_story_content_path(@story, content), :class => "line_link" %>.  </span>
   <% end %>
   </p>
 
 <p><%= link_to "Add a new line",  new_story_content_path(@story) %></p>
 <p><%= link_to "Delete", story_path(@story), :data => {confirm: "Is you sure?", method: "delete"} %></p>
 <p><%= link_to "Home", root_path %></p>
+
+<script>$(function () {
+  $('[data-toggle="popover"]').popover()
+})</script>

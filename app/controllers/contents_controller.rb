@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   def new
     @story = Story.find(params[:story_id])
     @content = @story.contents.new
-    @random_image = "#{rand(1..11)}" + ".png"
+    @random_image = "#{rand(1..11)}" + ".png"   #this will generate a random image by calling a random number and appending a .png
   end
 
   def create
