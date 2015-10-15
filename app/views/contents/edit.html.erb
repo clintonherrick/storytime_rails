@@ -2,4 +2,10 @@
 
 <%= render "form" %>
 
-<%= link_to 'Delete Line', story_content_path(@story, @content), :data => {:confirm => "Is you sure?", :method => "delete"}%> 
+<%= link_to 'Delete Line', story_content_path(@story, @content), :data => {:confirm => "Is you sure?", :method => "delete"}%>
+
+<!-- <%= image_url('Poo.png') %> -->
+
+<div class="icon">
+  <img src='<%= image_url("#{@content.image}") %>'>
+</div>

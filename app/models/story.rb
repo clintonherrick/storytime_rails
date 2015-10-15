@@ -3,5 +3,5 @@ class Story < ActiveRecord::Base
   validates :title, presence: true
   validates :image, :format => URI::regexp(%w(http https))
 
-  default_scope { order(:id) }
+  default_scope { order(:created_at) }
 end

@@ -2,6 +2,7 @@ class ContentsController < ApplicationController
   def new
     @story = Story.find(params[:story_id])
     @content = @story.contents.new
+    @random_image = "#{rand(1..11)}" + ".png"
   end
 
   def create
@@ -39,6 +40,6 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:line, :number)
+    params.require(:content).permit(:line, :number, :image)
   end
 end
